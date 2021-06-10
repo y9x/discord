@@ -285,36 +285,7 @@ class DiscordInvite extends HTMLElement {
 			nodes.description.textContent = 'You\'ve been invited to join a server';
 			
 			nodes.content.join.href = 'https://discord.com/invite/' + data.code;
-			
-			/* let counts = add_ele('div', info, { className: 'counts' });
-			
-			add_ele('div', counts, { className: 'online status' });
-			
-			add_ele('div', counts, { className: 'count', textContent: data.approximate_presence_count + ' Online' });
-			
-			add_ele('div', counts, { className: 'offline status' });
-			
-			add_ele('div', counts, { className: 'count', textContent: data.approximate_member_count + ' Members' });
-			
-			add_ele('button', content, { type: 'button', class: 'button', textContent: 'Join' }).addEventListener('click', () => {
-				location.assign();
-			});
-			
-			name.textContent = document.title = data.guild.name;
-			if(data.guild.icon)icon.style['background-image'] = 'url(' + JSON.stringify('https://cdn.discordapp.com/icons/' + data.guild.id + '/' + data.guild.icon + '?size=64') + ')';
-			else icon.textContent = data.guild.name.split(' ').map(word => word[0]).join('');*/
 		}
-		
-		return;
-		
-		var description = add_ele('div', node, { className: 'description' }),
-			content = add_ele('div', node, { className: 'content' }),
-			icon = add_ele('div', content, { className: 'icon' }),
-			info = add_ele('div', content, { className: 'info' }),
-			name = add_ele('div', info, { className: 'name' }),
-			data = await(await fetch('https://discordapp.com/api/v8/invites/' + node.dataset.invite + '?with_counts=true')).json();
-		
-		
 	}
 	connectedCallback(){
 		if(!this.hasAttribute('code'))console.warn('code property required', this);
