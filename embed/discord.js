@@ -258,7 +258,7 @@ class DiscordInvite extends HTMLElement {
 		
 		var cache_key = 'cache-' + code,
 			cache = localStorage[cache_key],
-			data = JSON.parse(localStorage[cache_key] || await(await fetch('https://discord.com/api/v8/invites/' + code + '?with_counts=true')).text());
+			data = JSON.parse(localStorage[cache_key] || await(await fetch(`https://discord.com/api/v8/invites/${code}?with_counts=true`)).text());
 		
 		if(!data.from_cache){
 			data.from_cache = true;

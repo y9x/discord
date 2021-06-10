@@ -17,6 +17,6 @@ body {
 	</head>
 	<body>
 		<script src='./discord.js'></script>
-		<script>fetch('../code.txt').then(res => res.text()).then(code => DiscordInvite.create(document.body, code))</script>
+		<script>fetch('../code.txt', { cache: 'no-store' }).then(res => res.text()).then(code => DiscordInvite.create(document.body, code))</script>
 	</body>
 </html>
