@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset='utf-8' />
+		<link rel='icon' href='../discord.png' />
+		<style>
+body {
+	margin: 0px;
+	background: url('./background.jpg') center / cover fixed;
+	font-family: Whitney;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+		</style>
+	</head>
+	<body>
+		<script src='./discord.js'></script>
+		<script>fetch('../code.txt').then(res => res.text()).then(code => DiscordInvite.create(document.body, code))</script>
+	</body>
+</html>
