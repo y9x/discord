@@ -1,7 +1,6 @@
 'use strict';
 
-var add_ele = (tag, par, atr) => Object.assign(par.appendChild(document.createElement(tag)), atr),
-	tree = (nodes, parent = document) => {
+var tree = (nodes, parent = document) => {
 		var output = {
 				parent: parent,
 			},
@@ -34,10 +33,6 @@ var add_ele = (tag, par, atr) => Object.assign(par.appendChild(document.createEl
 		
 		return output;
 	};
-
-document.querySelectorAll('.discord-invite[data-invite]').forEach(async node => {
-	create_invite(node, node.dataset.code);
-});
 
 class DiscordInvite extends HTMLElement {
 	constructor(){
